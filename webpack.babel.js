@@ -16,11 +16,12 @@ const baseConfig = {
         include: path.join(__dirname, 'src'),
         exclude: /node_modules/
       }, {
-        test: /\.css$/,
+        test: /\.css|scss$/,
         loader: ExtractTextPlugin.extract(
           'style-loader',
           'css-loader',
-          'postcss-loader'
+          'postcss-loader',
+          'sass-loader'
         )
       }, {
         test: /\.module\.css$/,
