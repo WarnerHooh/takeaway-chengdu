@@ -16,12 +16,18 @@ const baseConfig = {
         include: path.join(__dirname, 'src'),
         exclude: /node_modules/
       }, {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract(
+        test: /\.css|scss$/,
+        loaders: [
           'style-loader',
           'css-loader',
-          'postcss-loader'
-        )
+          'sass-loader'
+        ]
+        // loader: ExtractTextPlugin.extract(
+        //   'style-loader',
+        //   'css-loader',
+        //   'postcss-loader',
+        //   'sass-loader'
+        // )
       }, {
         test: /\.module\.css$/,
         loaders: [
@@ -35,6 +41,7 @@ const baseConfig = {
   },
   output: {
     path: path.join(__dirname, 'dist/assets/'),
+    publicPath: '/assets/',
     filename: '[name].js',
     pathInfo: false
   },
@@ -64,7 +71,7 @@ if (process.env.NODE_ENV === 'development') {
   )
   config.devtool = 'cheap-module-eval-source-map'
   config.plugins.push(
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       '__DEV__': true,

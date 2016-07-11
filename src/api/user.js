@@ -1,6 +1,6 @@
 import { apiServer, getJson, postJson } from './'
 
 export default {
-  login: () => Promise.resolve({ id: 0 }),
-  logout: () => Promise.resolve({ id: 0 })
+  login: ({ username, password }) => postJson(`${apiServer}/user/login`, { username, password }),
+  logout: ({ id }) => postJson(`${apiServer}/user/logout`, { id })
 }
