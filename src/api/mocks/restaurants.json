@@ -1,0 +1,13 @@
+[{
+  "restaurants": [{
+    "logo": "image_address",
+    "name": "KFC",
+    "rate": 4
+  },
+    {
+      "logo": "image_address",
+      "name": "7-11",
+      "rate": 3
+    }
+  ]
+}]
