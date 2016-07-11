@@ -1,18 +1,18 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import HomeComponent from '../components/HomeComponent'
+import ResListComponent from '../components/ResListComponent'
 
-class HomePage extends Component {
+class ResListPage extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired
   }
   render() {
     return (
-      <HomeComponent />
+      <ResListComponent />
     )
   }
 }
 
 const mapState = (state) => ({})
 
-export default connect(mapState)(HomePage)
+export default connect(mapState)(ResListPage)
