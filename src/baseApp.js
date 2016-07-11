@@ -6,6 +6,7 @@ import { Router, hashHistory } from 'react-router'
 
 import './reset.css'
 import './index.css'
+import './navigation.css'
 
 export default (store = {}, routes = {}, reducers = {}) => {
   global.React = React

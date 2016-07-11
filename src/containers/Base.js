@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 
 import { loading } from '../actions/app'
 
+
 export default class Base extends Component {
   static propTypes = {
     actions: PropTypes.object.isRequired,
