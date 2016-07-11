@@ -4,10 +4,12 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { Router, hashHistory } from 'react-router'
 
-import './reset.css'
-import './index.css'
 import './style/restaurant.css'
 import './style/login.css'
+import './navigation.css'
+import './restaurant.css'
+import './assets/styles/reset.css'
+import './index.scss'
 
 export default (store = {}, routes = {}, reducers = {}) => {
   global.React = React
