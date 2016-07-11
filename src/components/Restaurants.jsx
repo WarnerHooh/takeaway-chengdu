@@ -13,7 +13,7 @@ class Restaurant extends Component {
       <div>
         <img src=""/>
         <div>title</div>
-        <Rating rate={4.5}/>
+        <Rating rate={3.2}/>
         <p>Restaurant ListRestaurant ListRestaurant ListRestaurant List</p>
       </div>
     )
