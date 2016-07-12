@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import RestarantsContainer from '../containers/RestarantsContainer.js'
+import RestaurantsContainer from '../containers/RestaurantsContainer.js'
 
 class HomePage extends Component {
   static propTypes = {
@@ -9,7 +9,7 @@ class HomePage extends Component {
   };
   render() {
     return (
-      <RestarantsContainer data={this.props.restaurants}/>
+      <RestaurantsContainer data={this.props.restaurants}/>
     )
   }
 }
