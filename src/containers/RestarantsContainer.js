@@ -11,9 +11,7 @@ class RestarantsContainer extends Component {
 
   render() {
     return (
-      <div className="restaurant-container">
-          <RestaurantCard restaurants={this.props.data}/>
-      </div>
+      <RestaurantCard restaurants={this.props.data}/>
     )
   }
 

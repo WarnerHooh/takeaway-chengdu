@@ -8,8 +8,7 @@ class Rating extends Component {
     super(props)
   }
   render() {
-    console.log(this.props)
-    var self = this;
+    var self = this
 
     const styles = {
       container: {
