@@ -42,61 +42,34 @@ a:hover {
   cursor: pointer;
 }
 .restaurant-container{
-  width:80%;
+  width:90%;
   margin:2% auto;
 }
 .restaurant{
   padding:1%;
-  width:22%;
+  width:18%;
   background-color:#fff;
   color:#757575;
   float:left;
   margin:1%;
   font-size:0.5rem;
+  -moz-box-shadow:1px 1px 1px #d4d4d4;
+  -webkit-box-shadow:1px 1px 1px #d4d4d4;
+  box-shadow:1px 1px 1px #d4d4d4;
 }
 .restaurant-pic{
   height:auto;
   margin-bottom:1%;
   border:1px solid #eeeeff;
 }
-.restarant-name,.restarant-score,.restarant-summary{
-  line-height:24px;
+.restarant-name{
+  color:#000;
+  line-height:30px;
 }
 .restarant-summary{
+  font-size:14px;
+  line-height:24px;
   color:#757575;
-}
-.star-cb-group {
-  font-size: 0;
-  unicode-bidi: bidi-override;
-  direction: rtl;
-}
-.star-cb-group * {
-  font-size: 0.8rem;
-}
-.star-cb-group > input {
-  display: none;
-}
-.star-cb-group > input + label {
-  /* only enough room for the star */
-  display: inline-block;
-  overflow: hidden;
-  text-indent: 9999px;
-  width: 1em;
-  white-space: nowrap;
-  cursor: pointer;
-}
-.star-cb-group > input + label:before {
-  display: inline-block;
-  text-indent: -9999px;
-  color: #888;
-}
-.star-cb-group > input + label:before {
-  content: "☆";
-}
-.star-cb-group input:checked ~ label:before{
-  content: "★";
-  color: yellow;
-  text-shadow: 0 0 1px #333;
 }
 :root {
   font-size: 2em;

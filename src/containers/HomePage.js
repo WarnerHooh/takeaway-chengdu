@@ -5,7 +5,7 @@ import RestarantsContainer from '../containers/RestarantsContainer.js'
 class HomePage extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
-    restaurants: PropTypes.array.isRequired,
+    restaurants: PropTypes.array.isRequired
   };
   render() {
     return (

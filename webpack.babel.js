@@ -20,7 +20,7 @@ const baseConfig = {
         loaders: [
           'style-loader',
           'css-loader',
-          'sass-loader'
+          // 'sass-loader'
         ]
         // loader: ExtractTextPlugin.extract(
         //   'style-loader',
