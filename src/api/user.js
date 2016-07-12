@@ -1,4 +1,4 @@
-import { apiServer, getJson, postJson } from './'
+import { apiServer, postJson } from './'
 
 export default {
   login: ({ username, password }) => postJson(`${apiServer}/user/login`, { username, password }),
