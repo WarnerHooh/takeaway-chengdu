@@ -23,6 +23,6 @@ class OrderComponent extends Component {
 
 
 OrderComponent.propTypes = {
-  restaurants: PropTypes.array.isRequired
+  restaurants: PropTypes.object.isRequired
 }
 export default OrderComponent
