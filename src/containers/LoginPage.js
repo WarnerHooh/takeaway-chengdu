@@ -17,8 +17,13 @@ class LoginPage extends Component {
     super()
     this.login = this.login.bind(this)
   }
+  componentDidUpdate() {
+    if (this.props.token !== null) {
+      this.context.router.push('/home')
+    }
+  }
   login(username, password) {
-    this.props.login({username, password})
+    this.props.login({ username, password })
   }
   render() {
     console.log(this.props.token)
@@ -32,6 +37,12 @@ LoginPage.contextTypes = {
   router: React.PropTypes.object
 }
 
-var mapStateToProps = (state) => state.shared.user
+// var mapStateToProps = (state) => {}
+var mapStateToProps = (state) => {
+  console.log(state.shared.user)
+  return {
+    token: state.shared.user.token
+  }
+}
 
 export default connect(mapStateToProps, userActions)(LoginPage)
