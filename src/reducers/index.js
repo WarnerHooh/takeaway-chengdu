@@ -4,9 +4,11 @@ import { reducer as formReducer } from 'redux-form'
 import cardsReducer from './cardsReducer.js'
 
 import app from './app'
+import user from './user'
 
 const sharedDataReducer = combineReducers({
-  app
+  app,
+  user
 })
 
 const rootReducer = combineReducers({

@@ -6,10 +6,15 @@ import promise from 'redux-promise'
 import rootReducer from '../reducers'
 import DevTools from '../utils/DevTools'
 
+const logger = store => next => action => {
+  console.log(action)
+  return next(action)
+}
+
 export default function configureStore(initialState, history) {
   const historyMiddleware = syncHistory(history)
   const store = compose(
-    applyMiddleware(historyMiddleware, thunk, promise),
+    applyMiddleware(historyMiddleware, thunk, logger, promise),
     DevTools.instrument(),
     persistState(getDebugSessionKey())
   )(createStore)(rootReducer, initialState)

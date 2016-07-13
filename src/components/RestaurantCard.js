@@ -11,9 +11,9 @@ class RestaurantCard extends Component {
   render() {
     return (
       <div className="restaurant-container">
-        {this.props.restaurants.map((n) => {
+        {this.props.restaurants.map((n, i) => {
           return (
-            <div className="restaurant">
+            <div className="restaurant" key={i}>
               <div className="restaurant-pic">
                 <img src={'../assets/images/' + n.pic}/>
               </div>

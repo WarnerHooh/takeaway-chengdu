@@ -8,4 +8,3 @@ export default handleActions({
 }, {
   token: null
 })
-
