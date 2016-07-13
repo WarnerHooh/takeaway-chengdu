@@ -1,5 +1,4 @@
 import { hashHistory } from 'react-router'
-
 import baseApp from './baseApp'
 import routes from './routes'
 import configureStore from './store/configureStore'

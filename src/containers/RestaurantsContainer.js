@@ -1,10 +1,8 @@
-/**
- * Created by yinzhaoshu on 7/10/16.
- */
+
 import React, { Component, PropTypes } from 'react'
 import RestaurantCard from '../components/RestaurantCard.js'
 
-class RestarantsContainer extends Component {
+class RestaurantsContainer extends Component {
   constructor(props) {
     super(props)
   }
@@ -17,8 +15,8 @@ class RestarantsContainer extends Component {
 
 }
 
-RestarantsContainer.propTypes = {
+RestaurantsContainer.propTypes = {
   data: PropTypes.array.isRequired
 }
 
-export default RestarantsContainer
+export default RestaurantsContainer

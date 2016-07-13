@@ -3,13 +3,17 @@
  */
 import React, { Component, PropTypes } from 'react'
 import Rating from './Rating.jsx'
+
 class RestaurantCard extends Component {
+  static propTypes = {
+    restaurants: PropTypes.array.isRequired
+  }
   render() {
     return (
       <div className="restaurant-container">
-        {this.props.restaurants.map((n) => {
+        {this.props.restaurants.map((n, i) => {
           return (
-            <div className="restaurant">
+            <div className="restaurant" key={i}>
               <div className="restaurant-pic">
                 <img src={'../assets/images/' + n.pic}/>
               </div>
@@ -24,7 +28,4 @@ class RestaurantCard extends Component {
   }
 }
 
-RestaurantCard.propTypes = {
-  restaurants: PropTypes.array.isRequired
-}
 export default RestaurantCard
