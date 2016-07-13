@@ -4,7 +4,7 @@
   height: 16px;
   line-height: 16px;
   overflow: hidden;
-  margin: 5px 0 px;
+  margin: 5px 0 8px;
   font: 12px/1.125 Microsoft Yahei,Arial,Helvetica,sans-serif;
 }
 
@@ -33,4 +33,129 @@
 .restaurantList--rate__count{
   color: #707070;
   margin-left: 5px;
+}
+
+.orderPage{
+  width: 100%;
+  height: 100vh;
+  background-color: #EFEFEF;
+}
+
+.orderComponent{
+  width: 78vw;
+  height: 75vh;
+  background-color: #FFFFFF;
+  margin: auto;
+  margin-top: 5vh;
+}
+
+.orderComponent--restaurantInfo{
+  width: 50%;
+  height: 100%;
+  float: left;
+  background-color: #F7F4EF;
+}
+
+.orderComponent--restaurantInfo img{
+  width: 100%;
+  height: 60%;
+}
+
+.orderComponent--restaurantInfo h1{
+  width: 86%;
+  height: 20px;
+  line-height: 20px;
+  font-size: 17px;
+  margin: auto;
+  margin-top: 6vh;
+  color: #8E8B86;
+}
+
+.orderComponent--restaurantInfo__address{
+  width: 86%;
+  min-height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  margin: auto;
+  margin-top: 14px;
+  color: #BFBCB7;
+}
+
+.orderComponent--restaurantInfo__tel{
+  width: 86%;
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  margin: auto;
+  margin-top: 7px;
+  color: #BFBCB7;
+}
+
+.orderComponent--restaurantInfo p{
+  width: 86%;
+  min-height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  margin: auto;
+  margin-top: 7px;
+  color: #BFBCB7;
+}
+
+.orderComponent--restaurantForm{
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+.orderComponent--restaurantForm form{
+  width: 80%;
+  min-height: 70%;
+  margin: auto;
+  margin-top: 12%;
+}
+
+.orderComponent--restaurantForm form fieldset{
+  width: 100%;
+  min-height: 30px;
+  margin-top: 25px;
+}
+
+.orderComponent--restaurantForm label{
+  display: block;
+  float: left;
+  width: 32%;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 6%;
+  font-size: 15px;
+  text-align: right;
+  color: #B4B4B4;
+}
+
+.orderComponent--restaurantForm form fieldset input{
+  width: 60%;
+  height: 29px;
+  border: 2px solid #EAEAEA;
+  padding: 0 0 0 2%;
+  border-radius: 4px;
+}
+
+.orderComponent--restaurantForm textarea{
+  width: 60%;
+  min-height: 100px;
+  border: 2px solid #EAEAEA;
+  padding: 0 0 0 2%;
+  border-radius: 4px;
+  resize: none;
+}
+
+.orderComponent--restaurantFrom__submit{
+  width: 25%;
+  height: 29px;
+  border: 2px solid #65A799;
+  font-size: 20px;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #65A799;
+  margin: 24px 0 0 73%;
 }
