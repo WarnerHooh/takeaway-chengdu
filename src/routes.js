@@ -9,8 +9,8 @@ import HomePage from './containers/HomePage'
 
 export default (
   <Route path="/" component={Base}>
-    <IndexRoute component={LoginPage} />
-    <Route path="/home" component={HomePage} />
+    <IndexRoute component={HomePage} />
+    <Route path="/home" component={LoginPage} />
     <Route path="/404" component={NoMatch} />
     <Redirect from="*" to="404" />
   </Route>
