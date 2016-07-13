@@ -1,6 +1,4 @@
-/**
- * Created by yinzhaoshu on 7/10/16.
- */
+
 import React, { Component, PropTypes } from 'react'
 import RestaurantCard from '../components/RestaurantCard.js'
 
