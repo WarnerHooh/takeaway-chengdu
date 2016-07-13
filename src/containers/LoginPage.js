@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-// import user from '../api/user'
 import LoginComponent from '../components/LoginComponent'
 
 import * as userActions from '../actions/user'
@@ -22,8 +21,8 @@ class LoginPage extends Component {
       this.context.router.push('/home')
     }
   }
-  login(username, password) {
-    this.props.login({ username, password })
+  login(user) {
+    this.props.login(user)
   }
   render() {
     console.log(this.props.token)
