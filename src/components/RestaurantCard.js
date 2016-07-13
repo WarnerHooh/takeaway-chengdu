@@ -3,7 +3,11 @@
  */
 import React, { Component, PropTypes } from 'react'
 import Rating from './Rating.jsx'
+
 class RestaurantCard extends Component {
+  static propTypes = {
+    restaurants: PropTypes.array.isRequired
+  }
   render() {
     return (
       <div className="restaurant-container">
@@ -24,7 +28,4 @@ class RestaurantCard extends Component {
   }
 }
 
-RestaurantCard.propTypes = {
-  restaurants: PropTypes.array.isRequired
-}
 export default RestaurantCard

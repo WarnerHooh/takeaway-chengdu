@@ -3,7 +3,6 @@ import OrderForm from './OrderForm'
 class OrderComponent extends Component {
 
   render() {
-    console.log(this.props.restaurants)
     return (
       <div className="orderComponent">
         <div className="orderComponent--restaurantInfo">

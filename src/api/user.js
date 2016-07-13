@@ -1,6 +1,7 @@
-import { apiServer, postJson } from './'
+import { apiServer, postJson, getJson } from './'
 
 export default {
   login: ({ username, password }) => postJson(`${apiServer}/user/login`, { username, password }),
-  logout: ({ id }) => postJson(`${apiServer}/user/logout`, { id })
+  logout: ({ id }) => postJson(`${apiServer}/user/logout`, { id }),
+  logItems: () => getJson(`${apiServer}/restaurants`)
 }

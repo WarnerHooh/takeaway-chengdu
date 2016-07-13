@@ -8,6 +8,7 @@ class OrderPage extends Component {
     restaurants: PropTypes.array.isRequired
   }
   render() {
+    console.log(this.props)
     return (
       <div className="orderPage">
         <OrderComponent restaurants={this.props.restaurants[0]}/>
