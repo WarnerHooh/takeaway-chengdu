@@ -5,7 +5,6 @@ import * as RestsAction from '../actions/getRests'
 
 class HomePage extends Component {
   static propTypes = {
-    dispatch: PropTypes.func.isRequired,
     logItems: PropTypes.func.isRequired,
     restaurants: PropTypes.array.isRequired
   }
@@ -14,7 +13,6 @@ class HomePage extends Component {
     this.props.logItems()
   }
   render() {
-    console.log(this.props)
     return (
       <RestaurantsContainer data={this.props.restaurants}/>
     )

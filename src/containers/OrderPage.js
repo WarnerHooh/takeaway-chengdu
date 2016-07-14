@@ -1,27 +1,23 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import * as order from '../actions/order'
 import OrderComponent from '../components/OrderComponent'
 
 class OrderPage extends Component {
-  componentWillMount() {
-    this.props.orders()
+  static propTypes = {
+    restaurants: PropTypes.array.isRequired
   }
   render() {
-    console.log(this.props.orderdata)
+    console.log(this.props.restaurants)
     return (
       <div className="orderPage">
-        <OrderComponent data={this.props.orderdata[0]} />
+        <OrderComponent restaurants={this.props.restaurants}/>
       </div>
     )
   }
 }
 
-OrderPage.propTypes = {
-  orders: PropTypes.func.isRequired,
-  orderdata: PropTypes.array.isRequired
-}
 const mapState = (state) => {
-  return { orderdata: state.orderAction }
+  return { restaurants: state.cardsReducer.choosed }
 }
-export default connect(mapState, order)(OrderPage)
+
+export default connect((mapState))(OrderPage)

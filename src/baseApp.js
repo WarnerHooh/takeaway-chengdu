@@ -9,6 +9,7 @@ import './navigation.css'
 import './restaurant.css'
 import './assets/styles/reset.css'
 import './index.scss'
+import './history.css'
 
 export default (store = {}, routes = {}, reducers = {}) => {
   global.React = React
