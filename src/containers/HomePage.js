@@ -14,7 +14,6 @@ class HomePage extends Component {
     this.props.logItems()
   }
   render() {
-    console.log(this.props)
     return (
       <RestaurantsContainer data={this.props.restaurants}/>
     )

@@ -3,17 +3,24 @@
  */
 import React, { Component, PropTypes } from 'react'
 import Rating from './Rating.jsx'
+import $ from 'jquery'
+import * as chooseRest from '../actions/chooseRest.js'
 
 class RestaurantCard extends Component {
   static propTypes = {
     restaurants: PropTypes.array.isRequired
+  }
+
+  test(e) {
+    var choosedIndex = $(e.currentTarget).index()
+    chooseRest.chooseOne(choosedIndex);
   }
   render() {
     return (
       <div className="restaurant-container">
         {this.props.restaurants.map((n, i) => {
           return (
-            <div className="restaurant" key={i}>
+            <div className="restaurant" key={i} onClick={this.test}>
               <div className="restaurant-pic">
                 <img src={'../assets/images/' + n.pic}/>
               </div>

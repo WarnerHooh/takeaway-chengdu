@@ -7,7 +7,6 @@ import rootReducer from '../reducers'
 import DevTools from '../utils/DevTools'
 
 const logger = store => next => action => {
-  console.log(action)
   return next(action)
 }
 

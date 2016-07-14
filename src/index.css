@@ -1,0 +1,80 @@
+body {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, Helvetica Neue;
+  font-size: 18px;
+  overflow-x: hidden;
+  width: 100%;
+  min-width: 320px;
+  background-color: #EFEFEF; }
+
+* {
+  box-sizing: border-box; }
+
+h2 {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: bold;
+  letter-spacing: -.025em;
+  color: #222; }
+
+li {
+  list-style: none; }
+
+img {
+  max-width: 100%; }
+
+a {
+  color: white;
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer; }
+
+.restaurant-container {
+  width: 90%;
+  margin: 2% auto; }
+
+.restaurant {
+  cursor: pointer;
+  padding: 1%;
+  width: 18%;
+  background-color: #fff;
+  color: #757575;
+  float: left;
+  margin: 1%;
+  font-size: 0.5rem; }
+
+.restaurant:hover {
+  -moz-box-shadow: 1px 1px 15px #d4d4d4;
+  -webkit-box-shadow: 1px 1px 15px #d4d4d4;
+  box-shadow: 1px 1px 15px #d4d4d4; }
+
+.restaurant-pic {
+  height: auto;
+  margin-bottom: 1%;
+  border: 1px solid #eeeeff; }
+
+.restarant-name {
+  color: #000;
+  line-height: 30px; }
+
+.restarant-summary {
+  font-size: 14px;
+  line-height: 24px;
+  color: #757575; }
+
+:root {
+  font-size: 2em;
+  font-family: Helvetica, arial, sans-serif; }
+
+.button {
+  color: #00f; }
+
+/*# sourceMappingURL=index.css.map */
