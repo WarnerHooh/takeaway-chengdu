@@ -1,0 +1,97 @@
+/*----------history_style---------------------------------------------*/
+.history-container{
+  width: 80%;
+  margin: 3% auto;
+}
+.history{
+  width: 100%;
+  height: 181px;
+  background-color: #fff;
+  margin-bottom: 40px;
+}
+.history div{
+  display: inline-block;
+  vertical-align: top;
+}
+.history-logo{
+  width: 23%;
+  height: 100%;
+}
+.history-logo img{
+  width: 100%;
+}
+.history-info{
+  width: 77%;
+  height: 100%;
+}
+.history-contentInfo{
+  width: 22%;
+  height: 100%;
+  font-size: 16px;
+  margin-left: 3%;
+}
+.history-contentInfo p{
+  margin: 10% auto;
+}
+.history-contentInfo p:not(:first-child){
+  font-size: 14px;
+  color: #929292;
+}
+.history-contentInfo p:last-child span{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+  width: 90px;
+  overflow: hidden;
+}
+.history-contentInfo p:last-child button{
+  position: relative;
+  top: -5px;
+  left: 8px;
+  width: 62px;
+  height: 26px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #929292;
+  color: #929292;
+  background-color: transparent;
+  cursor: pointer;
+}
+.history-contentInfo p.history-comment__Evaluate{
+  color: #929292;
+}
+.history-contentInfo p.history-comment__Evaluate button{
+  color: #02ffa4;
+  border:1px solid #02ffa4;
+}
+.history-contentInfo p.history-comment__Cancel{
+  color: #ffb900;
+}
+.history-contentInfo p.history-comment__Cancel button{
+  color: #929292;
+  border:1px solid #929292;
+}
+.history-other{
+  width: 75%;
+  height: 100%;
+}
+.history-orderInfo{
+  width: 20%;
+  height: 75%;
+  /*border-bottom: 1px solid #929292;*/
+}
+.history-orderInfo p{
+  padding: 10% 0;
+  font-size: 14px;
+  color: #929292;
+}
+.history-orderInfo p:first-child{
+  margin-top: 10%;
+}
+.history-date{
+  width: 90%;
+  height: 25%;
+  line-height: 40px;
+  font-size: 14px;
+  color: #929292;
+}

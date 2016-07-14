@@ -8,17 +8,17 @@ class OrderPage extends Component {
     restaurants: PropTypes.array.isRequired
   }
   render() {
-    console.log(this.props)
+    console.log(this.props.restaurants)
     return (
       <div className="orderPage">
-        <OrderComponent restaurants={this.props.restaurants[0]}/>
+        <OrderComponent restaurants={this.props.restaurants}/>
       </div>
     )
   }
 }
 
 const mapState = (state) => {
-  return { restaurants: state.cardsReducer }
+  return { restaurants: state.cardsReducer.choosed }
 }
 
 export default connect((mapState))(OrderPage)
