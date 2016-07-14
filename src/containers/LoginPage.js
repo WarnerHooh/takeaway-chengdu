@@ -34,7 +34,6 @@ LoginPage.contextTypes = {
   router: React.PropTypes.object
 }
 
-// var mapStateToProps = (state) => {}
 var mapStateToProps = (state) => {
   return {
     token: state.shared.user.token
