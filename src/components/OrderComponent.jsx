@@ -1,7 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 import OrderForm from './OrderForm'
-class OrderComponent extends Component {
 
+
+class OrderComponent extends Component {
+  constructor(props) {
+    super(props)
+  }
   render() {
     return (
       <div className="orderComponent">
@@ -20,8 +24,8 @@ class OrderComponent extends Component {
   }
 }
 
-
 OrderComponent.propTypes = {
-  restaurants: PropTypes.object.isRequired
+  restaurants: PropTypes.array.isRequired
 }
+
 export default OrderComponent

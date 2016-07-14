@@ -1,9 +1,6 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 
 class Navigation extends Component {
-    static propTypes = {
-      dispatch: PropTypes.func.isRequired
-    };
     loginOut() {
       this.context.router.push('/login')
     }
