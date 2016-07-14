@@ -4,7 +4,7 @@ import OrderComponent from '../components/OrderComponent'
 
 class OrderPage extends Component {
   static propTypes = {
-    restaurants: PropTypes.object.isRequired
+    restaurants: PropTypes.array.isRequired
   }
   render() {
     console.log(this.props.restaurants)
