@@ -25,7 +25,7 @@ class LoginPage extends Component {
     this.props.login(user)
   }
   render() {
-    console.log(this.props.token)
+    // console.log(this.props.token)
     return (
       <LoginComponent login={this.login} />
     )
@@ -38,7 +38,7 @@ LoginPage.contextTypes = {
 
 // var mapStateToProps = (state) => {}
 var mapStateToProps = (state) => {
-  console.log(state.shared.user)
+  // console.log(state.shared.user)
   return {
     token: state.shared.user.token
   }

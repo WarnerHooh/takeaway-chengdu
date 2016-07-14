@@ -12,10 +12,11 @@ export default class Base extends Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <div style={ styles.container }>
         {(() => {
-          if (this.props.shared.app.token !== null) {
+          if (this.props.shared.user.token !== null) {
             return <Navigation />
           }
         })()}
