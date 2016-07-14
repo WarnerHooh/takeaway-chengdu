@@ -1,9 +1,6 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 
 class Rating extends Component {
-  static propTypes = {
-    dispatch: PropTypes.func.isRequired
-  };
   constructor(props) {
     super(props)
   }

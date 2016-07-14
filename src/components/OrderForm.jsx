@@ -3,7 +3,7 @@ import { reduxForm } from 'redux-form'
 
 export const fields = ['meetingname', 'code', 'unit', 'time', 'comment']
 
-const OrderForm = ({ fields: { meetingname, code, unit, time, comment}, handleSubmit }) => (
+const OrderForm = ({ fields: { meetingname, code, unit, time, comment }, handleSubmit }) => (
   <form onSubmit={handleSubmit}>
     <fieldset className="orderComponent--restaurantFrom__name">
       <label>Meeting Name:</label>

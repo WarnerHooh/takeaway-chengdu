@@ -20,7 +20,6 @@ class LoginComponent extends Component {
   }
   login(event) {
     event.preventDefault()
-    console.log(this.state)
     this.props.login(this.state)
   }
   render() {

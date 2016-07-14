@@ -46,6 +46,7 @@ a:hover {
   margin:2% auto;
 }
 .restaurant{
+  cursor:pointer;
   padding:1%;
   width:18%;
   background-color:#fff;
@@ -53,9 +54,11 @@ a:hover {
   float:left;
   margin:1%;
   font-size:0.5rem;
-  -moz-box-shadow:1px 1px 1px #d4d4d4;
-  -webkit-box-shadow:1px 1px 1px #d4d4d4;
-  box-shadow:1px 1px 1px #d4d4d4;
+}
+.restaurant:hover{
+  -moz-box-shadow:1px 1px 15px #d4d4d4;
+  -webkit-box-shadow:1px 1px 15px #d4d4d4;
+  box-shadow:1px 1px 15px #d4d4d4;
 }
 .restaurant-pic{
   height:auto;

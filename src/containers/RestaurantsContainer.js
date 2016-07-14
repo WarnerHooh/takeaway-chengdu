@@ -1,4 +1,3 @@
-
 import React, { Component, PropTypes } from 'react'
 import RestaurantCard from '../components/RestaurantCard.js'
 
