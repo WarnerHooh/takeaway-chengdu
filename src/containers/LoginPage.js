@@ -8,7 +8,8 @@ class LoginPage extends Component {
   static propTypes = {
     login: PropTypes.func,
     user: PropTypes.Object,
-    token: PropTypes.String
+    token: PropTypes.String,
+    loginVerify: PropTypes.func
   }
 
   constructor() {
@@ -21,7 +22,9 @@ class LoginPage extends Component {
     }
   }
   login(user) {
-    this.props.login(user)
+    if (user.username && user.password) {
+      this.props.loginVerify(user)
+    }
   }
   render() {
     return (
