@@ -2,7 +2,7 @@
  * Created by yinzhaoshu on 7/10/16.
  */
 import React, { Component, PropTypes } from 'react'
-import Rating from './Rating.jsx'
+import Rating from './Rating'
 import { bindActionCreators } from 'redux'
 import * as ChooseRest from '../actions/chooseRest'
 import { connect } from 'react-redux'
@@ -19,18 +19,22 @@ class RestaurantCard extends Component {
   render() {
     return (
       <div className="restaurant-container">
-        {this.props.restaurants.map((n, i) => {
-          return (
-            <div className="restaurant" key={i} data-key={i} onClick={this.getIdx.bind(this)}>
-              <div className="restaurant-pic">
-                <img src={'../assets/images/' + n.pic}/>
-              </div>
-              <div className="restarant-name">{n.name}</div>
-              <Rating rate={n.score}/>
-              <div className="restarant-summary">{n.summary}</div>
-            </div>
-          )
-        })}
+        {(() => {
+          if (this.props.cardsReducer.restaurants !== undefined) {
+            return this.props.cardsReducer.restaurants.map((n, i) => {
+              return (
+                <div className="restaurant" key={i} data-key={i} onClick={this.getIdx.bind(this)}>
+                  <div className="restaurant-pic">
+                    <img src={'../assets/images/' + n.pic}/>
+                  </div>
+                  <div className="restarant-name">{n.name}</div>
+                  <Rating rate={n.score}/>
+                  <div className="restarant-summary">{n.summary}</div>
+                </div>
+              )
+            })
+          }
+        })()}
       </div>
     )
   }
@@ -39,7 +43,7 @@ class RestaurantCard extends Component {
 export default RestaurantCard
 
 RestaurantCard.propTypes = {
-  restaurants: PropTypes.array.isRequired,
+  cardsReducer: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 }
 
@@ -49,7 +53,7 @@ RestaurantCard.contextTypes = {
 
 function mapStateToProps(state) {
   return {
-    restaurants: state.cardsReducer
+    cardsReducer: state.cardsReducer
   }
 }
 

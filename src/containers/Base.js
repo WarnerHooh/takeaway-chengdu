@@ -8,14 +8,16 @@ export default class Base extends Component {
   static propTypes = {
     actions: PropTypes.object.isRequired,
     children: PropTypes.element.isRequired,
-    shared: PropTypes.object.isRequired
+    shared: PropTypes.object.isRequired,
+    routes: PropTypes.array.isRequired
   };
 
   render() {
+    console.log(this.props);
     return (
       <div style={ styles.container }>
         {(() => {
-          if (this.props.shared.app.token !== null) {
+          if (this.props.routes[1].path !== '/login' && this.props.routes[1].path !== undefined) {
             return <Navigation />
           }
         })()}

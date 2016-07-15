@@ -21,12 +21,12 @@ class LoginPage extends Component {
     }
   }
   login(user) {
-    console.log(this.props)
     if (user.username && user.password) {
       this.props.loginVerify(user)
     }
   }
   render() {
+    console.log(this.props)
     return (
       <LoginComponent login={this.login} />
     )
