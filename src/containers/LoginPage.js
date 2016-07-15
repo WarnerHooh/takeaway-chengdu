@@ -6,7 +6,6 @@ import * as userActions from '../actions/user'
 
 class LoginPage extends Component {
   static propTypes = {
-    login: PropTypes.func,
     user: PropTypes.Object,
     token: PropTypes.String,
     loginVerify: PropTypes.func
@@ -22,6 +21,7 @@ class LoginPage extends Component {
     }
   }
   login(user) {
+    console.log(this.props)
     if (user.username && user.password) {
       this.props.loginVerify(user)
     }

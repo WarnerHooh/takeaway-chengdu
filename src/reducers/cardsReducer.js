@@ -7,7 +7,7 @@ export default function cardsReducer(state = [], action) {
   if (action.type === 'CHOOSE_RESTS') {
     var index = action.idx
     var choosed = state[index]
-    return (Object.assign({}, [state], {choosed}))
+    return (Object.assign({}, [state], { choosed }))
   }
 
   return state
