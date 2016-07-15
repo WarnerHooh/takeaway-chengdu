@@ -1,12 +1,13 @@
-export default function cardsReducer(state = [], action) {
+export default function cardsReducer(state = {}, action) {
   if (action.type === 'GET_RESTS') {
-    return [...action.payload]
+    // return [...action.payload]
+    return Object.assign({}, state, action.payload)
   }
 
   if (action.type === 'CHOOSE_RESTS') {
     var index = action.idx
-    var choosed = state[index]
-    return (Object.assign({}, [state], {choosed}))
+    var choosed = state.restaurants[index]
+    return (Object.assign({}, state, {choosed}))
   }
 
   return state

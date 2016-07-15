@@ -82,7 +82,9 @@ class History extends Component {
             </div>
           </div>
         </div>
-        <HistoryForm />
+        <div className="historyFormBox">
+          <HistoryForm />
+        </div>
       </div>
     )
   }
