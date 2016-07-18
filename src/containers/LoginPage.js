@@ -25,7 +25,6 @@ class LoginPage extends Component {
     }
   }
   render() {
-    console.log(this.props)
     return (
       <LoginComponent login={this.login} />
     )

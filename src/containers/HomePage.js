@@ -1,12 +1,12 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import RestaurantsContainer from '../containers/RestaurantsContainer.js'
+import RestaurantCard from '../components/RestaurantCard'
 import * as RestsAction from '../actions/getRests'
 
 class HomePage extends Component {
   static propTypes = {
     logItems: PropTypes.func.isRequired,
-    restaurants: PropTypes.array.isRequired
+    restaurants: PropTypes.object.isRequired
   }
 
   componentWillMount() {
@@ -14,7 +14,7 @@ class HomePage extends Component {
   }
   render() {
     return (
-      <RestaurantsContainer data={this.props.restaurants}/>
+      <RestaurantCard restaurants={this.props.restaurants}/>
     )
   }
 }

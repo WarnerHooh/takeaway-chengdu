@@ -18,3 +18,8 @@ fetchMock
     }
   })
   .mock(`${apiServer}/restaurants`, 'GET', restaurants)
+  .mock(`${apiServer}/order`, 'POST', (url, data) => {
+    const newOrder = JSON.parse(data.body)
+    restaurants.allOrder.push(newOrder)
+    return restaurants
+  })

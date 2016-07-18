@@ -4,7 +4,10 @@ import OrderComponent from '../components/OrderComponent'
 
 class OrderPage extends Component {
   static propTypes = {
-    restaurants: PropTypes.array.isRequired
+    restaurants: PropTypes.object.isRequired
+  }
+  componentDidUpdate() {
+    this.context.router.push('/history')
   }
   render() {
     return (
@@ -17,6 +20,10 @@ class OrderPage extends Component {
 
 const mapState = (state) => {
   return { restaurants: state.cardsReducer.choosed }
+}
+
+OrderPage.contextTypes = {
+  router: React.PropTypes.object
 }
 
 export default connect((mapState))(OrderPage)

@@ -8,9 +8,6 @@ import * as ChooseRest from '../actions/chooseRest'
 import { connect } from 'react-redux'
 
 class RestaurantCard extends Component {
-  constructor() {
-    super()
-  }
   getIdx(e) {
     var Idx = e.currentTarget.getAttribute('data-key')
     this.props.actions.chooseRest(Idx)
@@ -39,8 +36,6 @@ class RestaurantCard extends Component {
     )
   }
 }
-
-export default RestaurantCard
 
 RestaurantCard.propTypes = {
   cardsReducer: PropTypes.object.isRequired,

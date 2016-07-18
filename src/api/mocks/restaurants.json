@@ -34,5 +34,25 @@
       "tel":  "15198251116"
     }
   ],
-  "choosed": {}
+  "choosed": {},
+  "allOrder": [
+    {
+      "name": "川调·清粥小菜",
+      "pic": "food-1.jpg",
+      "tel":  "15198251116",
+      "unit": 2,
+      "comments": "鱼香肉丝",
+      "orderStatus": "cancle",
+      "time": "01:51"
+    },
+    {
+      "name": "川调·清粥小菜",
+      "pic": "food-1.jpg",
+      "tel":  "15198251116",
+      "unit": 2,
+      "comments": "鱼香肉丝",
+      "orderStatus": "cancle",
+      "time": "02:53"
+    }
+  ]
 }
