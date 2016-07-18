@@ -6,7 +6,7 @@ import * as RestsAction from '../actions/getRests'
 class HomePage extends Component {
   static propTypes = {
     logItems: PropTypes.func.isRequired,
-    restaurants: PropTypes.array.isRequired
+    restaurants: PropTypes.object.isRequired
   }
 
   componentWillMount() {

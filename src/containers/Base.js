@@ -13,7 +13,6 @@ export default class Base extends Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       <div style={ styles.container }>
         {(() => {
