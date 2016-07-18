@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import HistoryForm from './HistoryForm'
 
 class History extends Component {
   static propTypes = {
@@ -80,6 +81,9 @@ class History extends Component {
               </div>
             </div>
           </div>
+        </div>
+        <div className="historyFormBox">
+          <HistoryForm />
         </div>
       </div>
     )

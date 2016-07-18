@@ -10,7 +10,6 @@ class OrderPage extends Component {
     this.context.router.push('/history')
   }
   render() {
-    console.log(this.props.restaurants)
     return (
       <div className="orderPage">
         <OrderComponent restaurants={this.props.restaurants}/>
