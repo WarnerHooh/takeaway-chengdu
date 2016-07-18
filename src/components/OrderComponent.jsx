@@ -8,8 +8,8 @@ class OrderComponent extends Component {
   }
   handleSubmit(event, data) {
     console.log(event); // this should be the data, but is an event
-    console.log(data); // no data here, either...
     console.log('Submission received!');
+    this.context.router.push('/history')
   }
   render() {
     return (
@@ -31,6 +31,10 @@ class OrderComponent extends Component {
 
 OrderComponent.propTypes = {
   restaurants: PropTypes.array.isRequired
+}
+
+OrderComponent.contextTypes = {
+  router: React.PropTypes.object
 }
 
 export default OrderComponent

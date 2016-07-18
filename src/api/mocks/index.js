@@ -18,5 +18,4 @@ fetchMock
     }
   })
   .mock(`${apiServer}/restaurants`, 'GET', restaurants)
-  .mock(`${apiServer}/restaurants`, 'POST', )
-  
+  .mock(`${apiServer}/restaurants`, 'POST', restaurants)
