@@ -6,7 +6,6 @@ import * as userActions from '../actions/user'
 
 class LoginPage extends Component {
   static propTypes = {
-    user: PropTypes.Object,
     token: PropTypes.String,
     loginVerify: PropTypes.func
   }

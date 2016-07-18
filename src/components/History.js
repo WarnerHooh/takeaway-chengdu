@@ -5,6 +5,24 @@ class History extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired
   };
+  constructor(props) {
+    super(props)
+    this.state = {
+      hide: true,
+      score: 0
+    }
+  }
+  handleHideChange(e) {
+    const self = this;
+    this.setState({
+      hide: !self.state.hide
+    })
+  }
+  handleScoreChange(event) {
+    this.setState({
+      score: event.currentTarget.getAttribute('data-key')
+    })
+  }
   render() {
     return (
       <div className="history-container">
@@ -61,7 +79,7 @@ class History extends Component {
               </p>
               <p className="history-comment__Evaluate">
                 <span>done</span>
-                <button>evaluate</button>
+                <button onClick={e => this.handleHideChange(e)}>evaluate</button>
               </p>
             </div>
             <div className="history-other">
@@ -82,9 +100,16 @@ class History extends Component {
             </div>
           </div>
         </div>
-        <div className="historyFormBox">
-          <HistoryForm />
-        </div>
+        {(() => {
+          if (this.state.hide !== true) {
+            return (
+              <div className="historyFormBox">
+                <HistoryForm changeScore={this.handleScoreChange.bind(this)} changeHide={this.handleHideChange.bind(this)} score={this.state.score} />
+                <div className="blackLayer" onClick={e => this.handleHideChange(e)}></div>
+              </div>
+            )
+          }
+        })()}
       </div>
     )
   }

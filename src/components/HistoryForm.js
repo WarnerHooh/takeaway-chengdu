@@ -1,31 +1,38 @@
-import React, { PropTypes } from 'react'
-import { reduxForm } from 'redux-form'
+import React, { Component, PropTypes } from 'react'
 import Score from './Score'
 
-export const fields = ['restaurantName', 'score']
-
-const HistoryForm = ({ fields: { restaurantName, score }, handleSubmit }) => (
-  <form onSubmit={handleSubmit} className="historyForm">
-    <h3>Evaluate restaurant</h3>
-    <p>Restaurant Name</p>
-    <Score />
-    <fieldset className="historyFrom__comment">
-      <label>evaluate</label>
-      <textarea type="textarea" rows="7" cols="44"/>
-    </fieldset>
-    <div className="historyForm__btnBox">
-      <input className="historyFrom__submit" type="submit" value="Submit"/>
-      <input className="historyFrom__cancel" type="button" value="Cancel"/>
-    </div>
-  </form>
-)
-
-HistoryForm.propTypes = {
-  fields: PropTypes.object.isRequired,
-  handleSubmit: PropTypes.func.isRequired
+class HistoryForm extends Component {
+  static propTypes = {
+    changeHide: PropTypes.func,
+    changeScore: PropTypes.func,
+    score: PropTypes.Number
+  };
+  constructor(props) {
+    super(props)
+  }
+  onSubmit(event) {
+    this.props.changeHide()
+  }
+  stopClose(e) {
+    e.preventDefault()
+  }
+  render() {
+    return (
+      <form className="historyForm" onClick={e => this.stopClose(e)}>
+        <h3>Evaluate restaurant</h3>
+        <p>Restaurant Name</p>
+        <Score score={this.props.score} handleScoreChange={this.props.changeScore}/>
+        <fieldset className="historyFrom__comment">
+          <label>evaluate</label>
+          <textarea type="textarea" rows="7" cols="44"/>
+        </fieldset>
+        <div className="historyForm__btnBox">
+          <input onClick={this.onSubmit.bind(this)} className="historyFrom__submit" type="submit" value="Submit"/>
+          <input onClick={this.props.changeHide} className="historyFrom__cancel" type="button" value="Cancel"/>
+        </div>
+      </form>
+    )
+  }
 }
 
-export default reduxForm({
-  form: 'history',
-  fields
-})(HistoryForm)
+export default HistoryForm

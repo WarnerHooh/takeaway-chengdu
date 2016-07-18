@@ -103,7 +103,15 @@
   bottom: 0;
   width: 100%;
   height: 100%;
+}
+.blackLayer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.31);
+  z-index: 3;
 }
 .historyForm{
   position: absolute;

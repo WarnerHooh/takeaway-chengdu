@@ -4,7 +4,6 @@ import * as userActions from '../actions/user'
 
 class Navigation extends Component {
     static propTypes = {
-      dispatch: PropTypes.func.isRequired,
       logout: PropTypes.func
     };
     loginOut() {
