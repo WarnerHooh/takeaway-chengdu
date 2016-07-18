@@ -25,7 +25,7 @@ const OrderForm = ({ fields: { meetingname, code, unit, time, comment }, handleS
       <label>Comment:</label>
       <textarea type="textarea" placeholder="comment" {...comment} />
     </fieldset>
-    <input className="orderComponent--restaurantFrom__submit" type="submit" value="Submit"/>
+    <input className="orderComponent--restaurantFrom__submit" type="button" value="Submit" onClick={handleSubmit}/>
   </form>
 )
 

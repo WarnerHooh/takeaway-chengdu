@@ -9,3 +9,5 @@ fetchMock
   .mock(`${apiServer}/user/login`, 'POST', user[0])
   .mock(`${apiServer}/user/logout`, 'POST', {})
   .mock(`${apiServer}/restaurants`, 'GET', restaurants)
+  .mock(`${apiServer}/restaurants`, 'POST', )
+  

@@ -6,6 +6,11 @@ class OrderComponent extends Component {
   constructor(props) {
     super(props)
   }
+  handleSubmit(event, data) {
+    console.log(event); // this should be the data, but is an event
+    console.log(data); // no data here, either...
+    console.log('Submission received!');
+  }
   render() {
     return (
       <div className="orderComponent">
@@ -17,7 +22,7 @@ class OrderComponent extends Component {
           <p>Desctiptions: {this.props.restaurants.summary}</p>
         </div>
         <div className="orderComponent--restaurantForm">
-          <OrderForm />
+          <OrderForm onSubmit={this.handleSubmit.bind(this)}/>
         </div>
       </div>
     )

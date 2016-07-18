@@ -36,8 +36,6 @@ class RestaurantCard extends Component {
   }
 }
 
-export default RestaurantCard
-
 RestaurantCard.propTypes = {
   restaurants: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired
