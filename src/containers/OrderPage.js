@@ -6,6 +6,9 @@ class OrderPage extends Component {
   static propTypes = {
     restaurants: PropTypes.array.isRequired
   }
+  componentDidUpdate() {
+    this.context.router.push('/history')
+  }
   render() {
     return (
       <div className="orderPage">

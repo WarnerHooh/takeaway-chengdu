@@ -6,6 +6,11 @@ class OrderComponent extends Component {
   constructor(props) {
     super(props)
   }
+  handleSubmit(event, data) {
+    console.log(event); // this should be the data, but is an event
+    console.log('Submission received!');
+    this.context.router.push('/history')
+  }
   render() {
     return (
       <div className="orderComponent">
@@ -17,7 +22,7 @@ class OrderComponent extends Component {
           <p>Desctiptions: {this.props.restaurants.summary}</p>
         </div>
         <div className="orderComponent--restaurantForm">
-          <OrderForm />
+          <OrderForm onSubmit={this.handleSubmit.bind(this)}/>
         </div>
       </div>
     )
@@ -26,6 +31,10 @@ class OrderComponent extends Component {
 
 OrderComponent.propTypes = {
   restaurants: PropTypes.array.isRequired
+}
+
+OrderComponent.contextTypes = {
+  router: React.PropTypes.object
 }
 
 export default OrderComponent
