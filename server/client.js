@@ -5,12 +5,12 @@ import webpackConfig from '../webpack.babel'
 
 const compiler = webpack(webpackConfig)
 const server = webpackDevMiddleware(compiler, {
-  contentBase: "public",
+  contentBase: "dist",
   hot: true,
   historyApiFallback: false,
   compress: true,
   quiet: false,
-  noInfo: true,
+  noInfo: false,
   watchOptions: {
     aggregateTimeout: 300,
     poll: 1000
