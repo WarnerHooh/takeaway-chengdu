@@ -3,6 +3,7 @@ import fetchMock from 'fetch-mock'
 import { apiServer } from '../'
 import user from './user.json'
 import restaurants from './restaurants.json'
+import history from './history.json'
 
 fetchMock
   .mock(`${apiServer}/me/profile`, 'GET', user[0])
@@ -23,3 +24,4 @@ fetchMock
     restaurants.allOrder.push(newOrder)
     return restaurants
   })
+  .mock(`${apiServer}/history`, 'GET', history)

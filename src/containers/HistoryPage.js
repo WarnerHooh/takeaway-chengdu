@@ -1,18 +1,29 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import History from '../components/History'
+import * as historyAction from '../actions/history'
 
 class HistoryPage extends Component {
   static propTypes = {
-    dispatch: PropTypes.func.isRequired
-  };
+    getHistory: PropTypes.func.isRequired,
+    historyItem: PropTypes.array.isRequired
+  }
+
+  componentWillMount() {
+    this.props.getHistory()
+  }
   render() {
+    console.log(this.props)
     return (
-      <History />
+      <History historyItem={this.props.historyItem}/>
     )
   }
 }
 
-const mapState = (state) => ({})
+const mapState = (state) => {
+  return {
+    historyItem: state.history
+  }
+}
 
-export default connect(mapState)(HistoryPage)
+export default connect(mapState, historyAction)(HistoryPage)
