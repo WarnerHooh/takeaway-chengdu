@@ -12,6 +12,7 @@ class HistoryForm extends Component {
   }
   onSubmit(event) {
     this.props.changeHide()
+    console.log(this.props)
   }
   stopClose(e) {
     e.preventDefault()

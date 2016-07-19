@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import HistoryForm from './HistoryForm'
+import Rating from './Rating'
 
 class History extends Component {
   static propTypes = {
@@ -12,15 +13,16 @@ class History extends Component {
       score: 0
     }
   }
-  handleHideChange(e) {
-    const self = this;
+  handleHideChange(e, orderId) {
+    const self = this
     this.setState({
-      hide: !self.state.hide
+      hide: !self.state.hide,
+      orderId
     })
   }
   handleScoreChange(event) {
     this.setState({
-      score: event.currentTarget.getAttribute('data-key')
+      score: event.currentTarget.getAttribute('data-key'),
     })
   }
   render() {
@@ -33,6 +35,7 @@ class History extends Component {
           <div className="history-info">
             <div className="history-contentInfo">
               <p>川调</p>
+              <Rating rate={3}/>
               <p>年终大会</p>
               <p>tel:12112121212</p>
               <p>
@@ -70,6 +73,7 @@ class History extends Component {
           <div className="history-info">
             <div className="history-contentInfo">
               <p>川调</p>
+              <Rating rate={3}/>
               <p>年终大会</p>
               <p>tel:12112121212</p>
               <p>
@@ -79,7 +83,7 @@ class History extends Component {
               </p>
               <p className="history-comment__Evaluate">
                 <span>done</span>
-                <button onClick={e => this.handleHideChange(e)}>evaluate</button>
+                <button onClick={e => this.handleHideChange(e, 'order2')}>evaluate</button>
               </p>
             </div>
             <div className="history-other">
@@ -104,7 +108,7 @@ class History extends Component {
           if (this.state.hide !== true) {
             return (
               <div className="historyFormBox">
-                <HistoryForm changeScore={this.handleScoreChange.bind(this)} changeHide={this.handleHideChange.bind(this)} score={this.state.score} />
+                <HistoryForm changeScore={this.handleScoreChange.bind(this)} changeHide={this.handleHideChange.bind(this)} score={this.state.score} orderId={this.state.orderId}/>
                 <div className="blackLayer" onClick={e => this.handleHideChange(e)}></div>
               </div>
             )

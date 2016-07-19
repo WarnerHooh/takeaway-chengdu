@@ -12,6 +12,7 @@
 .history div{
   display: inline-block;
   vertical-align: top;
+  overflow:hidden;
 }
 .history-logo{
   width: 23%;
@@ -31,7 +32,7 @@
   margin-left: 3%;
 }
 .history-contentInfo p{
-  margin: 10% auto;
+  margin: 5% auto;
 }
 .history-contentInfo p:not(:first-child){
   font-size: 14px;

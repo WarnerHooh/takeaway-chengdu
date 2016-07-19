@@ -17,6 +17,7 @@ class OrderComponent extends Component {
     this.context.router.push('/history')
   }
   render() {
+    console.log(this.props)
     return (
       <div className="orderComponent">
         <div className="orderComponent--restaurantInfo">

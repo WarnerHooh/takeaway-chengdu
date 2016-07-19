@@ -10,10 +10,6 @@ export default function cardsReducer(state = {}, action) {
   }
 
   if (action.type === 'SUBMIT_ORDER') {
-    // console.log(action.payload)
-    // var originOrder = action.pa  yload.allOrder
-    // originOrder.push(action.orderData)
-    // console.log(Object.assign({}, state, {allOrder: originOrder}))
     console.log(Object.assign({}, state, action.payload))
     return Object.assign({}, state, action.payload)
   }
