@@ -8,6 +8,9 @@ import * as ChooseRest from '../actions/chooseRest'
 import { connect } from 'react-redux'
 
 class RestaurantCard extends Component {
+  constructor() {
+    super()
+  }
   getIdx(e) {
     var Idx = e.currentTarget.getAttribute('data-key')
     this.props.actions.chooseRest(Idx)
@@ -20,7 +23,7 @@ class RestaurantCard extends Component {
           if (this.props.cardsReducer.restaurants !== undefined) {
             return this.props.cardsReducer.restaurants.map((n, i) => {
               return (
-                <div className="restaurant" key={i} data-key={i} onClick={this.getIdx.bind(this)}>
+                <div className="restaurant" key={i} data-key={i} id={n.id} onClick={this.getIdx.bind(this)}>
                   <div className="restaurant-pic">
                     <img src={'../assets/images/' + n.pic}/>
                   </div>
@@ -36,6 +39,8 @@ class RestaurantCard extends Component {
     )
   }
 }
+
+export default RestaurantCard
 
 RestaurantCard.propTypes = {
   cardsReducer: PropTypes.object.isRequired,

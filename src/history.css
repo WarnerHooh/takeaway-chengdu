@@ -12,6 +12,7 @@
 .history div{
   display: inline-block;
   vertical-align: top;
+  overflow:hidden;
 }
 .history-logo{
   width: 23%;
