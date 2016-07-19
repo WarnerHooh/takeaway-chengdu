@@ -1,18 +1,24 @@
 import React, { Component, PropTypes } from 'react'
 import Score from './Score'
+import * as LightStar from '../actions/lightStar'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
 class HistoryForm extends Component {
   static propTypes = {
     changeHide: PropTypes.func,
     changeScore: PropTypes.func,
-    score: PropTypes.Number
+    score: PropTypes.Number,
+    orderId: PropTypes.String
   };
   constructor(props) {
     super(props)
   }
   onSubmit(event) {
+    var orderId = this.props.orderId
+    var score = this.props.score
+    this.props.actions.lightStar(orderId, score)
     this.props.changeHide()
-    console.log(this.props)
   }
   stopClose(e) {
     e.preventDefault()
@@ -37,3 +43,22 @@ class HistoryForm extends Component {
 }
 
 export default HistoryForm
+
+HistoryForm.propTypes = {
+  actions: PropTypes.object.isRequired
+}
+
+function mapStateToProps() {
+  return {}
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(LightStar, dispatch)
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HistoryForm)
