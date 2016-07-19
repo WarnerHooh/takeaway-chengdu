@@ -11,7 +11,7 @@ class History extends Component {
     }
   }
   handleHideChange(e) {
-    const self = this;
+    const self = this
     this.setState({
       hide: !self.state.hide
     })
@@ -22,7 +22,6 @@ class History extends Component {
     })
   }
   render() {
-    console.log(this.props)
     return (
       <div className="history-container">
         {(() => {

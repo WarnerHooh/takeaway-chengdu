@@ -13,7 +13,6 @@ class HistoryPage extends Component {
     this.props.getHistory()
   }
   render() {
-    console.log(this.props)
     return (
       <History historyItem={this.props.historyItem}/>
     )
