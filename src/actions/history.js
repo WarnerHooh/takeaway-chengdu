@@ -1,5 +1,5 @@
 import { createAction } from 'redux-actions'
-import userApi from '../api/user'
+import orderApi from '../api/order'
 
 export const GET_HISTORY = 'GET_HISTORY'
-export const getHistory = createAction(GET_HISTORY, userApi.history)
+export const getHistory = createAction(GET_HISTORY, orderApi.history)

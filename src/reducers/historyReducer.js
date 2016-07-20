@@ -8,7 +8,7 @@ export default function historyReducer(state = [], action) {
     var score = action.score
     console.log(state)
     var newState = state
-    newState.map(function (item, idx) {
+    newState.map((item, idx) => {
       if (item.orderId === orderId) {
         item.score = score
       }
