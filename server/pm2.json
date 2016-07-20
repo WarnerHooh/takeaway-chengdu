@@ -1,0 +1,9 @@
+{
+  "apps": [{
+    "name": "takeaway",
+    "script": "./server/index.js",
+    "interpreter": "babel-node",
+    "watch": "./server",
+    "log": "pm2.log"
+  }]
+}
