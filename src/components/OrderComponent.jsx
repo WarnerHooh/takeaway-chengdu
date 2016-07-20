@@ -12,7 +12,7 @@ class OrderComponent extends Component {
     var name = this.props.restaurant.name
     var tel = this.props.restaurant.tel
     var pic = this.props.restaurant.pic
-    const newOrder = {...event, name, tel, pic}
+    const newOrder = { ...event, name, tel, pic }
     this.props.actions.submitOrder(newOrder)
     this.context.router.push('/history')
   }

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import LoginComponent from '../components/LoginComponent'
 
 import * as userActions from '../actions/user'
+import Popup from '../components/popup'
 
 class LoginPage extends Component {
   static propTypes = {
@@ -13,6 +14,9 @@ class LoginPage extends Component {
   constructor() {
     super()
     this.login = this.login.bind(this)
+    this.state = {
+      show: false
+    }
   }
   componentDidUpdate() {
     if (this.props.token !== null) {
@@ -24,9 +28,18 @@ class LoginPage extends Component {
       this.props.loginVerify(user)
     }
   }
+  handleShowChange() {
+    const self = this
+    this.setState({
+      show: !self.state.show
+    })
+  }
   render() {
     return (
-      <LoginComponent login={this.login} />
+      <div>
+        <LoginComponent login={this.login} />
+        <Popup open={this.state.show} component={null} changeShow={this.handleShowChange.bind(this)}/>
+      </div>
     )
   }
 }

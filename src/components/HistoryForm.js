@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux'
 
 class HistoryForm extends Component {
   static propTypes = {
-    changeHide: PropTypes.func,
+    changeShow: PropTypes.func,
     changeScore: PropTypes.func,
     score: PropTypes.Number,
     orderId: PropTypes.String
@@ -18,7 +18,7 @@ class HistoryForm extends Component {
     var orderId = this.props.orderId
     var score = this.props.score
     this.props.actions.lightStar(orderId, score)
-    this.props.changeHide()
+    this.props.changeShow()
   }
   stopClose(e) {
     e.preventDefault()
@@ -35,7 +35,7 @@ class HistoryForm extends Component {
         </fieldset>
         <div className="historyForm__btnBox">
           <input onClick={this.onSubmit.bind(this)} className="historyFrom__submit" type="submit" value="Submit"/>
-          <input onClick={this.props.changeHide} className="historyFrom__cancel" type="button" value="Cancel"/>
+          <input onClick={this.props.changeShow} className="historyFrom__cancel" type="button" value="Cancel"/>
         </div>
       </form>
     )

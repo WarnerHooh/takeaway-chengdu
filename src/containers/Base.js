@@ -11,6 +11,9 @@ export default class Base extends Component {
     shared: PropTypes.object.isRequired,
     routes: PropTypes.array.isRequired
   };
+  constructor() {
+    super()
+  }
 
   render() {
     return (

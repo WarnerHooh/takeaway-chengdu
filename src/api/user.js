@@ -5,6 +5,5 @@ export default {
   logout: ({ id }) => postJson(`${apiServer}/user/logout`, { id }),
   loginVerify: ({ username, password }) => postJson(`${apiServer}/user/loginVerify`, { username, password }),
   logItems: () => getJson(`${apiServer}/restaurants`),
-  postOrder: (orderinfo) => postJson(`${apiServer}/order`, orderinfo),
-  history: () => getJson(`${apiServer}/history`)
+  postOrder: (orderinfo) => postJson(`${apiServer}/order`, orderinfo)
 }

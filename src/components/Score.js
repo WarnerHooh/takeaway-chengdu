@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react'
 
 class Score extends Component {
   static propTypes = {
-    dispatch: PropTypes.func.isRequired,
     score: PropTypes.Number,
     handleScoreChange: PropTypes.func
   };

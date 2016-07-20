@@ -1,26 +1,12 @@
 import React, { Component, PropTypes } from 'react'
-import HistoryForm from './HistoryForm'
 import Rating from './Rating'
 
 class History extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      hide: true,
-      score: 0
-    }
   }
-  handleHideChange(e, orderId) {
-    const self = this
-    this.setState({
-      hide: !self.state.hide,
-      orderId
-    })
-  }
-  handleScoreChange(event) {
-    this.setState({
-      score: event.currentTarget.getAttribute('data-key'),
-    })
+  openPopup(e, orderId) {
+    this.props.changeShow(orderId)
   }
   render() {
     return (
@@ -55,7 +41,7 @@ class History extends Component {
                       return (
                         <p className="history-comment__Evaluate">
                           <span>done</span>
-                          <button onClick={e => this.handleHideChange(e, item.orderId)}>evaluate</button>
+                          <button onClick={e => this.openPopup(e, item.orderId)}>evaluate</button>
                         </p>
                       )
                     })()}
@@ -74,23 +60,14 @@ class History extends Component {
             )
           })
         })()}
-        {(() => {
-          if (this.state.hide !== true) {
-            return (
-              <div className="historyFormBox">
-                <HistoryForm changeScore={this.handleScoreChange.bind(this)} changeHide={this.handleHideChange.bind(this)} score={this.state.score} orderId={this.state.orderId}/>
-                <div className="blackLayer" onClick={e => this.handleHideChange(e)}></div>
-              </div>
-            )
-          }
-        })()}
       </div>
     )
   }
 }
 
 History.propTypes = {
-  historyItem: PropTypes.array.isRequired
+  historyItem: PropTypes.array.isRequired,
+  changeShow: PropTypes.func
 }
 
 export default History
