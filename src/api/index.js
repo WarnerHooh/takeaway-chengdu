@@ -16,7 +16,12 @@ if (global.location &&
 export const serverAddress = server
 export const apiServer = `${server}/api`
 export const saveToken = (newToken) => token = newToken
-
+export const setToken = (newToken) => {
+  localStorage.setItem('token', newToken)
+}
+export const getToken = () => {
+  return localStorage.getItem('token')
+}
 export const PAGER_LIMIT = 10
 export const getPager = (offset = 0, limit = PAGER_LIMIT) => `?from=${offset}&limit=${limit}`
 
@@ -44,7 +49,6 @@ export const postJson = (url, data = {}) => {
   .then(checkStatus)
   .then(fetchJson)
 }
-
 export const getJson = (url) => {
   let postData = {
     method: 'GET'
@@ -56,12 +60,10 @@ export const getJson = (url) => {
     .then(checkStatus)
     .then(fetchJson)
 }
-
 export const upload = (url, file) => {
   const postData = {
     method: 'POST'
   }
-
   const formData = new FormData()
   formData.append('file', file)
 
@@ -71,7 +73,6 @@ export const upload = (url, file) => {
   .then(checkStatus)
   .then(fetchJson)
 }
-
 const checkStatus = response => {
   if (response.status >= 200 && response.status < 400) {
     return response
@@ -85,7 +86,6 @@ const fetchJson = response => {
     return Promise.resolve({})
   }
 }
-
 const prepareHeader = () => {
   return {
     headers: {

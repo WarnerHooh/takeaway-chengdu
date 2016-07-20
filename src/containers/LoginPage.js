@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import LoginComponent from '../components/LoginComponent'
-
 import * as userActions from '../actions/user'
+import { setToken } from '../api/index'
 
 class LoginPage extends Component {
   static propTypes = {
@@ -16,6 +16,8 @@ class LoginPage extends Component {
   }
   componentDidUpdate() {
     if (this.props.token !== null) {
+      const token = this.props.token
+      setToken(token)
       this.context.router.push('/home')
     }
   }

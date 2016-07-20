@@ -1,10 +1,17 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import OrderComponent from '../components/OrderComponent'
+import { getToken } from '../api/index'
 
 class OrderPage extends Component {
   static propTypes = {
     restaurants: PropTypes.object.isRequired
+  }
+  componentWillMount() {
+    const token = getToken()
+    if (!token) {
+      this.context.router.push('/login')
+    }
   }
   componentDidUpdate() {
     this.context.router.push('/history')
