@@ -12,22 +12,13 @@ const baseConfig = {
   module: {
     loaders: [{
         test: /\.jsx?$/,
-        loaders: ['react-hot', 'babel?cacheDirectory', 'eslint'],
-        include: path.join(__dirname, 'src'),
-        exclude: /node_modules/
+        loaders: ['react-hot', 'babel', 'eslint']
       }, {
         test: /\.css|scss$/,
         loaders: [
           'style-loader',
-          'css-loader',
-          // 'sass-loader'
+          'css-loader'
         ]
-        // loader: ExtractTextPlugin.extract(
-        //   'style-loader',
-        //   'css-loader',
-        //   'postcss-loader',
-        //   'sass-loader'
-        // )
       }, {
         test: /\.module\.css$/,
         loaders: [
@@ -40,8 +31,8 @@ const baseConfig = {
     }]
   },
   output: {
-    path: path.join(__dirname, 'dist/assets/'),
-    publicPath: '/assets/',
+    path: path.join(__dirname, 'dist'),
+    publicPath: '/',
     filename: '[name].js',
     pathInfo: false
   },
@@ -71,7 +62,6 @@ if (process.env.NODE_ENV === 'development') {
   )
   config.devtool = 'cheap-module-eval-source-map'
   config.plugins.push(
-    // new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       '__DEV__': true,
@@ -82,7 +72,7 @@ if (process.env.NODE_ENV === 'development') {
   )
   config.devServer = {
     contentBase: './dist',
-    publicPath: '/assets/',
+    publicPath: '/',
     headers: {
       'Access-Control-Allow-Origin': '*'
     },

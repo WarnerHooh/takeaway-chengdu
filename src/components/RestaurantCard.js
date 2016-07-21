@@ -4,7 +4,7 @@
 import React, { Component, PropTypes } from 'react'
 import Rating from './Rating'
 import { bindActionCreators } from 'redux'
-import * as ChooseRest from '../actions/chooseRest'
+import * as Rests from '../actions/Rests'
 import { connect } from 'react-redux'
 
 class RestaurantCard extends Component {
@@ -59,7 +59,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(ChooseRest, dispatch)
+    actions: bindActionCreators(Rests, dispatch)
   }
 }
 

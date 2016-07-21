@@ -1,12 +1,13 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import RestaurantCard from '../components/RestaurantCard'
-import * as RestsAction from '../actions/getRests'
 import Popup from '../components/popup'
+import * as RestsAction from '../actions/Rests'
+import { getToken } from '../api/index'
 
 class HomePage extends Component {
   static propTypes = {
-    logItems: PropTypes.func.isRequired,
+    getRestaurants: PropTypes.func.isRequired,
     restaurants: PropTypes.object.isRequired
   }
   constructor() {
@@ -16,7 +17,11 @@ class HomePage extends Component {
     }
   }
   componentWillMount() {
-    this.props.logItems()
+    const token = getToken()
+    if (!token) {
+      this.context.router.push('/login')
+    }
+    this.props.getRestaurants()
   }
   handleShowChange() {
     const self = this
@@ -32,6 +37,10 @@ class HomePage extends Component {
       </div>
     )
   }
+}
+
+HomePage.contextTypes = {
+  router: React.PropTypes.object
 }
 
 const mapState = (state) => {

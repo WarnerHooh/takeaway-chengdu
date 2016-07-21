@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import OrderComponent from '../components/OrderComponent'
 import Popup from '../components/popup'
+import { getToken } from '../api/index'
 
 class OrderPage extends Component {
   static propTypes = {
@@ -16,8 +17,14 @@ class OrderPage extends Component {
   handleShowChange() {
     const self = this
     this.setState({
-      show: !self.state.show
+    show: !self.state.show
     })
+  }
+  componentWillMount() {
+    const token = getToken()
+    if (!token) {
+      this.context.router.push('/login')
+    }
   }
   render() {
     return (
